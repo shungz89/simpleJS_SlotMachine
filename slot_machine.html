@@ -88,19 +88,16 @@
 		//Roll the slot, randomize a b c, and then set the colors, and do the logic to respond to result
 		function rolltheSlot(){
 
-			randomizeSlot("a");
-			randomizeSlot("b");
-			randomizeSlot("c");
+			randomizeAllSlots();
+			fillAllColors();
 
-			for (var j = 0; j < slot_column.length ; j++) {
+		}
 
-				for (var i = 0 ; i < slot_row.length ; i++) {
+	function randomizeAllSlots(){
 
-					setColor(slot_column[j],slot_row[i]);
-					//console.log("slot column "+ slot_column[j]+ " row "+ slot_row[i]);
+				for (var i = 0; i < slot_column.length ; i++) {
+					randomizeSlot(slot_column[i]);
 				}
-			}
-
 	}
 
 	function randomizeSlot(slotRow){
@@ -123,6 +120,18 @@
 			document.getElementById(slotRow+"3").innerHTML =  parseInt(document.getElementById(slotRow+"1").innerHTML) + 2;
 		}
 
+	}
+
+	function fillAllColors(){
+
+		for (var j = 0; j < slot_column.length ; j++) {
+
+				for (var i = 0 ; i < slot_row.length ; i++) {
+
+					setColor(slot_column[j],slot_row[i]);
+					//console.log("slot column "+ slot_column[j]+ " row "+ slot_row[i]);
+				}
+			}
 	}
 
 	function setColor(slotColumn, slotRow){
