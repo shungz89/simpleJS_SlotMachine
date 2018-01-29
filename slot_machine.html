@@ -51,11 +51,11 @@
 
 	<br>
 
-	<button onclick="spinTheWheel(this)" id="button1">Spin The Wheel!</button> 
+	<button onclick="spinTheWheel()" id="button1">Spin The Wheel!</button> 
 
 	<br>
 
-	<button onclick="restart(this)" id="button2" style="display: none">Restart</button>
+	<button onclick="restart()" id="button2" style="display: none">Restart</button>
 
 
 	<script>
@@ -71,14 +71,14 @@
 		rolltheSlot();
 
 
-		function spinTheWheel(id){
+		function spinTheWheel(){
 
 			rolltheSlot();
 			checkResult();
 
 		}
 
-		function restart(id){
+		function restart(){
 
 			document.getElementById("button1").disabled = false;
 			document.getElementById("button2").style.display = "none";
