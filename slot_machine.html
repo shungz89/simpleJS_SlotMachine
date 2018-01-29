@@ -74,13 +74,13 @@
 		function spinTheWheel(id){
 
 			rolltheSlot();
+			checkResult();
 
 		}
 
 		function restart(id){
 
 			document.getElementById("button1").disabled = false;
-
 			document.getElementById("button2").style.display = "none";
 
 		}
@@ -100,20 +100,6 @@
 					//console.log("slot column "+ slot_column[j]+ " row "+ slot_row[i]);
 				}
 			}
-
-			if((document.getElementById("a1").innerHTML ==document.getElementById("b1").innerHTML) &&
-				(document.getElementById("b1").innerHTML
-					==document.getElementById("c1").innerHTML) &&
-				(document.getElementById("a1").innerHTML
-					==document.getElementById("c1").innerHTML)
-				){
-				document.getElementById("status").innerHTML = "Success! :D";
-			document.getElementById("button1").disabled = true;
-			document.getElementById("button2").style.display = "block";
-		}
-		else{
-			document.getElementById("status").innerHTML = "Fail :(";
-		}
 
 	}
 
@@ -141,6 +127,24 @@
 
 	function setColor(slotColumn, slotRow){
 		document.getElementById(slotColumn+slotRow).style.backgroundColor= slots_color[parseInt(document.getElementById(slotColumn+slotRow).innerHTML)-1];
+	}
+
+	function checkResult(){
+
+		if((document.getElementById("a1").innerHTML ==document.getElementById("b1").innerHTML) &&
+				(document.getElementById("b1").innerHTML
+					==document.getElementById("c1").innerHTML) &&
+				(document.getElementById("a1").innerHTML
+					==document.getElementById("c1").innerHTML)
+				){
+				document.getElementById("status").innerHTML = "Success! :D";
+			document.getElementById("button1").disabled = true;
+			document.getElementById("button2").style.display = "block";
+		}
+		else{
+			document.getElementById("status").innerHTML = "Fail :(";
+		}
+
 	}
 
 </script>
